@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	hahaha
+	
+	<button onclick="getLocation()">Show my location</button>
+
+	<p id="pos"></p>
+
+	<script>
+		
+		var x = document.getElementById("pos");
+		
+		function getLocation() {
+			navigator.geolacation.getCurrentPosition(showPosition);
+		};
+		
+		function showPosition(position) {
+			x.innerHTML = "LAT:" + position.coords.latitude + "LON:" + position.coords.longitude;
+		};
+		
+	
+	</script>
+
+</body>
+</html>

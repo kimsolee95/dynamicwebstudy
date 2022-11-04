@@ -1,0 +1,103 @@
+package dynamicwebpractice.test.openapi;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DBUtil {
+
+
+//	Connection con = null;
+//
+//	try {
+//		// SQLite JDBC 체크
+//		Class.forName("org.sqlite.JDBC");
+//		
+//		// SQLite 데이터베이스 파일에 연결
+//		String dbFile = "C:\\dynamicwebpractice\\test1.sqlite";
+//		con = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
+//		
+//		// SQL 수행
+//		Statement stat = con.createStatement();
+//		ResultSet rs = stat.executeQuery("SELECT * FROM PUBLIC_WIFY_INFO");
+//		while(rs.next()) {
+//			String id = rs.getString("X_SWIFI_MGR_NO");
+//			String name = rs.getString("LAT");
+//			
+//			System.out.println(id + "	" + name);
+//		}
+//		
+//	}catch(Exception e) {
+//		e.printStackTrace();
+//	}finally {
+//		if(con != null) {
+//			try {con.close();}
+//			catch(Exception e) {}
+//		}
+//	}
+	
+	
+	public void dbSelect() {
+
+		Connection conn = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet rs = null;
+		
+		String dbFile = "C:\\dynamicwebpractice\\test1.sqlite";
+		
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
+			
+			String sql = "SELECT * FROM PUBLIC_WIFY_INFO";
+			preparedStatement = conn.prepareStatement(sql);
+			
+			rs = preparedStatement.executeQuery();
+			
+	        while (rs.next()) {
+	            String X_SWIFI_MGR_NO = rs.getString("X_SWIFI_MGR_NO");
+	            String X_SWIFI_WRDOFC = rs.getString("X_SWIFI_WRDOFC");
+	            String X_SWIFI_MAIN_NM = rs.getString("X_SWIFI_MAIN_NM");
+
+	            System.out.println(X_SWIFI_MGR_NO + ", " + X_SWIFI_WRDOFC + "," + X_SWIFI_MAIN_NM);
+	        }
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null && !rs.isClosed()) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				if (preparedStatement != null && !preparedStatement.isClosed()) {
+					preparedStatement.close();
+				}
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				if (conn != null && !conn.isClosed()) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+				
+	}
+	
+}

@@ -1,0 +1,13 @@
+package dynamicwebpractice.test.openapi;
+
+public class WifiInfo {
+	private TbPublicWifiInfo tbPublicWifiInfo;
+
+	public TbPublicWifiInfo getTbPublicWifiInfo() {
+	return tbPublicWifiInfo;
+	}
+//
+//	public void setTbPublicWifiInfo(TbPublicWifiInfo tbPublicWifiInfo) {
+//	this.tbPublicWifiInfo = tbPublicWifiInfo;
+//	}
+}

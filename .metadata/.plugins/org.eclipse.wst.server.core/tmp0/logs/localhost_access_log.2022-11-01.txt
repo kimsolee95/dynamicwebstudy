@@ -1,0 +1,11 @@
+127.0.0.1 - - [01/Nov/2022:22:38:02 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:22:38:02 +0900] "GET /dynamicwebpractice/ HTTP/1.1" 404 830
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:22:38:02 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:22:38:10 +0900] "GET /dynamicwebpractice/test.jsp HTTP/1.1" 200 139
+127.0.0.1 - - [01/Nov/2022:23:09:12 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:23:09:13 +0900] "GET /dynamicwebpractice/ HTTP/1.1" 404 830
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:23:09:22 +0900] "GET /dynamicwebpractice/test.jsp HTTP/1.1" 200 1217
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:23:14:32 +0900] "GET /dynamicwebpractice/test.jsp HTTP/1.1" 200 537
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:23:16:52 +0900] "GET /dynamicwebpractice/test.jsp HTTP/1.1" 200 495
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:23:17:07 +0900] "GET /dynamicwebpractice/test.jsp HTTP/1.1" 200 495
+0:0:0:0:0:0:0:1 - - [01/Nov/2022:23:19:22 +0900] "GET /dynamicwebpractice/test.jsp HTTP/1.1" 200 495

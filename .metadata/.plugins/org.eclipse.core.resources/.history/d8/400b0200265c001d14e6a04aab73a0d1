@@ -1,0 +1,29 @@
+package dynamicwebpractice.test.openapi;
+
+import java.util.List;
+
+public class TbPublicWifiInfo {
+	
+	private long list_total_count;
+	private Result result;
+	private List<Row> row = null;
+	
+	public long getList_total_count() {
+		return list_total_count;
+	}
+	public void setList_total_count(Integer list_total_count) {
+		this.list_total_count = list_total_count;
+	}
+	public Result getResult() {
+		return result;
+	}
+	public void setResult(Result result) {
+		this.result = result;
+	}
+	public List<Row> getRow() {
+		return row;
+	}
+	public void setRow(List<Row> row) {
+		this.row = row;
+	}
+}

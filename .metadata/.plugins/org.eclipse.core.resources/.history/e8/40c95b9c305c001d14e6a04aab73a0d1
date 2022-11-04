@@ -1,0 +1,40 @@
+package dynamicwebpractice.test.openapi;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class DBUtil {
+
+
+	Connection con = null;
+
+	try {
+		// SQLite JDBC 체크
+		Class.forName("org.sqlite.JDBC");
+		
+		// SQLite 데이터베이스 파일에 연결
+		String dbFile = "C:\\dynamicwebpractice\\test1.sqlite";
+		con = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
+		
+		// SQL 수행
+		Statement stat = con.createStatement();
+		ResultSet rs = stat.executeQuery("SELECT * FROM PUBLIC_WIFY_INFO");
+		while(rs.next()) {
+			String id = rs.getString("X_SWIFI_MGR_NO");
+			String name = rs.getString("LAT");
+			
+			System.out.println(id + "	" + name);
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}finally {
+		if(con != null) {
+			try {con.close();}
+			catch(Exception e) {}
+		}
+	}
+	
+}
