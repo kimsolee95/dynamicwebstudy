@@ -1,4 +1,4 @@
-package dynamicwebpractice.test.openapi;
+package dynamicwebpractice.test.openapi.dto;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

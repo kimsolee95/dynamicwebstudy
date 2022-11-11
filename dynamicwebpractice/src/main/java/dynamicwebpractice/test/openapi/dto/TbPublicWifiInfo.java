@@ -1,10 +1,12 @@
-package dynamicwebpractice.test.openapi;
+package dynamicwebpractice.test.openapi.dto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import dynamicwebpractice.test.openapi.dto.Result;
+import dynamicwebpractice.test.openapi.dto.Row;
 
 public class TbPublicWifiInfo {
 

@@ -11,6 +11,8 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import dynamicwebpractice.test.openapi.dto.WifiInfo;
+
 public class ApiExplorer {
 	
 	public WifiInfo callWifiInfoApi() throws IOException {
