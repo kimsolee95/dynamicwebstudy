@@ -7,12 +7,9 @@
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.google.gson.FieldNamingPolicy"/>
-    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.google.gson.annotations.SerializedName"/>
     <fullyQualifiedTypeName name="com.google.gson.annotations.Expose"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -21,4 +18,15 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.service.CallApiService"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.dto.WifiInfo"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.dto.Row"/>
+    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.service.DBService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.dto.MyLocHistory"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.common.DBConnectionUtil"/>
+    <fullyQualifiedTypeName name="dynamicwebpractice.test.openapi.common.CalculateDistance"/>
 </qualifiedTypeNameHistroy>

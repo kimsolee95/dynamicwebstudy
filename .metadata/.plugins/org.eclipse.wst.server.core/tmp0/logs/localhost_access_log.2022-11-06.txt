@@ -1,0 +1,17 @@
+127.0.0.1 - - [06/Nov/2022:00:03:19 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:00:03:20 +0900] "GET /dynamicwebpractice/WEB-INF/views/wifilist.jsp HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:00:03:23 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 2001
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:00:03:30 +0900] "POST /dynamicwebpractice/wfinfo HTTP/1.1" 200 27045
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:00:04:35 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 1975
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:00:04:43 +0900] "POST /dynamicwebpractice/wfinfo HTTP/1.1" 200 27019
+127.0.0.1 - - [06/Nov/2022:18:29:13 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:29:15 +0900] "GET /dynamicwebpractice/ HTTP/1.1" 404 830
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:29:15 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:29:54 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 1975
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:30:05 +0900] "POST /dynamicwebpractice/wfinfo HTTP/1.1" 200 27019
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:34:13 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 2459
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:34:13 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:37:23 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 2526
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:18:39:21 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 2526
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:19:13:38 +0900] "GET /dynamicwebpractice/wfinfo HTTP/1.1" 200 2526
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:19:14:34 +0900] "POST /dynamicwebpractice/wfinfo HTTP/1.1" 200 27570

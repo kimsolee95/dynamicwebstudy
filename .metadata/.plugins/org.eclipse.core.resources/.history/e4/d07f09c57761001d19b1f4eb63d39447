@@ -1,0 +1,12 @@
+package dynamicwebpractice.test.openapi.dto;
+
+public class MyLocHistory {
+
+	private String id;
+	private String lat;
+	private String lnt;
+	private String useDttm;
+	private String deleteYn;
+	
+	
+}

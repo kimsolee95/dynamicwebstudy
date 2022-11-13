@@ -70,6 +70,17 @@ public class Row {
 	@Expose
 	private String workDttm;
 	
+	/* 추가 컬럼*/
+	private Double distance;
+	
+	public Double getDistance() {
+		return distance;
+	}
+
+	public void setDistance(Double distance) {
+		this.distance = distance;
+	}
+
 	public String getXSwifiMgrNo() {
 	return xSwifiMgrNo;
 	}

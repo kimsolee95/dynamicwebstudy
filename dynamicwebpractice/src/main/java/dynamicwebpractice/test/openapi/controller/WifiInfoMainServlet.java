@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dynamicwebpractice.test.openapi.common.CalculateDistance;
 import dynamicwebpractice.test.openapi.dto.Row;
 import dynamicwebpractice.test.openapi.dto.WifiInfo;
 import dynamicwebpractice.test.openapi.service.CallApiService;
@@ -41,6 +42,10 @@ public class WifiInfoMainServlet extends HttpServlet {
 			//2. select db
 			DBService dbService = new DBService();
 			List<Row> wifiInfolist = dbService.getNearWifiList(lat, lnt);
+
+			CalculateDistance calculateDistance = new CalculateDistance();
+			calculateDistance.getDistance(lat, lnt, wifiInfolist);
+
 			request.setAttribute("wifiInfolist", wifiInfolist);
 		}
 		

@@ -1,0 +1,5 @@
+package dynamicwebpractice.test.openapi.dto;
+
+public class MyLocHistory {
+
+}

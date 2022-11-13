@@ -19,9 +19,16 @@ import dynamicwebpractice.test.openapi.service.DBService;
 @WebServlet("/wfinfo-myhistory")
 public class WifiInfoHistoryServlet extends HttpServlet {
 
+	private DBService dbService = new DBService();
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String historyId = String.valueOf(request.getParameter("historyId"));
 		
-		DBService dbService = new DBService();
+		if (!"".equals(historyId) && !historyId.isEmpty() && historyId != null && !"null".equals(historyId)) {
+			dbService.myLocHistoryDelete(historyId);
+		}
+				
 		List<MyLocHistory> myHistoryList = dbService.selectMyLocHisList();
 		
 		request.setAttribute("myHistoryList", myHistoryList);
@@ -31,7 +38,7 @@ public class WifiInfoHistoryServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 

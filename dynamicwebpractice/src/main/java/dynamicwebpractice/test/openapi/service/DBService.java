@@ -8,34 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import dynamicwebpractice.test.openapi.common.DBConnectionUtil;
 import dynamicwebpractice.test.openapi.dto.MyLocHistory;
 import dynamicwebpractice.test.openapi.dto.Row;
 import dynamicwebpractice.test.openapi.dto.WifiInfo;
 
 public class DBService {
-
-	/*
-	 * DB connection 객체 생성
-	 * */
-	public Connection getDBConnection() {
-		
-		Connection conn = null;
-		String dbFile = "C:\\dynamicwebpractice\\test1.db";
-		
-		try {
-			Class.forName("org.sqlite.JDBC");
-		} catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
-			return conn;
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-		return conn;
-	}
+	
+	private DBConnectionUtil dbConnUtil = new DBConnectionUtil();
 	
 	/*
 	 * 내 주변 wifi 조회 및 히스토리 저장
@@ -65,7 +45,7 @@ public class DBService {
 		
 		
 		try {
-			conn = getDBConnection();
+			conn = dbConnUtil.getDBConnection();
 			
 			String sql = "SELECT A.* FROM PUBLIC_WIFY_INFO A ORDER BY ABS(A.LAT - ?) * ABS(A.LAT - ?) + ABS(A.LNT - ?) * ABS(A.LNT - ?)" +
 					" limit 1, 100";
@@ -141,7 +121,7 @@ public class DBService {
 		ResultSet rs = null;
 		
 		try {
-			conn = getDBConnection();
+			conn = dbConnUtil.getDBConnection();
 			
 			String sql = "insert or replace into PUBLIC_WIFY_INFO (" +
 							"X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2," + 
@@ -220,9 +200,9 @@ public class DBService {
 		ResultSet rs = null;
 				
 		try {
-			conn = getDBConnection();
+			conn = dbConnUtil.getDBConnection();
 			
-			String sql = "INSERT INTO USER_LOC_HISTORY (LAT, LNT) VALUES (?, ?)";
+			String sql = "INSERT INTO USER_LOC_HISTORY (LAT, LNT, USE_DTTM) VALUES (?, ?, datetime('now', 'LOCALTIME'))";
 			preparedStatement = conn.prepareStatement(sql);
 			
 			preparedStatement.setString(1, lat);
@@ -272,7 +252,7 @@ public class DBService {
 		List<MyLocHistory> myLocHisList = new ArrayList<>();
 		
 		try {
-			conn = getDBConnection();
+			conn = dbConnUtil.getDBConnection();
 			
 			String sql = "SELECT * FROM USER_LOC_HISTORY WHERE DELETE_YN = 'N'";
 			preparedStatement = conn.prepareStatement(sql);	
@@ -317,6 +297,55 @@ public class DBService {
 		}
 				
 		return myLocHisList;
+	}
+	
+	/*
+	 * 내 위치 히스토리 목록 삭제
+	 * */
+	public void myLocHistoryDelete(String historyId) {
+		
+		Connection conn = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet rs = null;
+				
+		try {
+			conn = dbConnUtil.getDBConnection();
+			
+			String sql = "UPDATE USER_LOC_HISTORY SET DELETE_YN = 'Y' WHERE ID = ?";
+			preparedStatement = conn.prepareStatement(sql);
+			
+			preparedStatement.setString(1, historyId);
+		
+			preparedStatement.executeUpdate();				
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null && !rs.isClosed()) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				if (preparedStatement != null && !preparedStatement.isClosed()) {
+					preparedStatement.close();
+				}
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				if (conn != null && !conn.isClosed()) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+				
 	}
 
 	
