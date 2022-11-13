@@ -4,6 +4,7 @@ import java.util.List;
 
 import dynamicwebpractice.test.openapi.dto.Row;
 
+public class CalculateDistance {
 	
 	//거리 계산
 	private Double getDistance(Double lat, Double lnt, Double lat2, Double lnt2) {
