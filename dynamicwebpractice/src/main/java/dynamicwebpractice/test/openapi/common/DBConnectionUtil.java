@@ -11,7 +11,7 @@ public class DBConnectionUtil {
 	public Connection getDBConnection() {
 		
 		Connection conn = null;
-		String dbFile = "C:\\dynamicwebpractice\\test1.db";
+		String dbFile = "C:\\assignment01\\db\\test1.db"; //"C:\\dynamicwebpractice\\test1.db";
 		
 		try {
 			Class.forName("org.sqlite.JDBC");
